@@ -47,7 +47,11 @@ public class Level : MonoBehaviour
 
     private void Berd_OnDied(object sender, System.EventArgs a)
     {
-        ResetSprint();
+        if(sprint)
+        {
+            ResetSprint();
+        }
+        
         gamestate = GameState.DedBerd;
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
